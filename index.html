@@ -5,7 +5,7 @@
     <script src="js/scripts.js"></script>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">  
     <link href="css/styles.css" rel="stylesheet" type="text/css">  
-    <title>Template</title>
+    <title>Bernice's Pizza Company</title>
   </head>
 
   <body>
@@ -16,98 +16,100 @@
       <blockquote>Anyone who says that money cannot buy happiness has clearly never spent their money on pizza.</blockquote>
       <div id="div-order">
         <form id="form-order">
-        <label for="size" class="control-label">Select your pizza size.</label>
+        <label for="size" class="control-label"><p class="h3">Name for your order.</p></label>
+        <input id="name" class="form-control" type="text">
+        <label for="size" class="control-label"><p class="h3">Select your pizza size.</p></label>
         <div class="radio">
           <label>
-            <input type="radio" name="size" value="small">
+            <input type="radio" name="size" value="Small">
             Small - $8.00
           </label>
           <label>
-            <input type="radio" name="size" value="medium">
+            <input type="radio" name="size" value="Medium" checked>
             Medium - $10.00
           </label>
           <label>
-            <input type="radio" name="size" value="large">
+            <input type="radio" name="size" value="Large">
             Large - $13.00
           </label>
           <label>
-            <input type="radio" name="size" value="extra-large">
+            <input type="radio" name="size" value="Extra Large">
             Extra Large - $16.00
           </label>
         </div>
         
-        <label for="toppings" class="control-label">Select your toppings.</label>
+        <label for="toppings" class="control-label"><p class="h3">Select your toppings.</p></label>
         <div class=checkbox>
-          <h3>Topping Group A</h3>
+          <h4>Topping Group A</h4>
           <p class="small">No additional charge</p>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Mozzarella cheese">
+            <input type="checkbox" name="toppings" value="A:Mozzarella cheese" checked>
             Mozzarella cheese
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Ricotta cheese">
+            <input type="checkbox" name="toppings" value="A:Ricotta cheese">
             Ricotta cheese
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Tomato-based sauce">
+            <input type="checkbox" name="toppings" value="A:Tomato-based sauce" checked>
             Tomato-based sauce
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Cream-based sauce">
+            <input type="checkbox" name="toppings" value="A:Cream-based sauce">
             Cream-based sauce
           </label>
 
-          <h3> Topping Group B</h3>
+          <h4> Topping Group B</h4>
           <p class="small"> $0.25 each for small and medium pizzas, $0.50 each for large and extra-large</p>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Onions">
+            <input type="checkbox" name="toppings" value="B:Onions">
             Onions
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Olives">
+            <input type="checkbox" name="toppings" value="B:Olives">
             Olives
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Mushrooms">
+            <input type="checkbox" name="toppings" value="B:Mushrooms">
             Mushrooms
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Pepperoni">
+            <input type="checkbox" name="toppings" value="B:Pepperoni">
             Pepperoni
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Peppers">
+            <input type="checkbox" name="toppings" value="B:Peppers">
             Peppers
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Pineapple">
+            <input type="checkbox" name="toppings" value="B:Pineapple">
             Pineapple
           </label>
               
-          <h3>Topping Group C</h3>
+          <h4>Topping Group C</h4>
           <p class="small">$0.50 each for small and medium pizzas, $1.00 each for large and extra-large</p>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Artichoke hearts">
+            <input type="checkbox" name="toppings" value="C:Artichoke hearts">
             Artichoke hearts
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Canadian Bacon">
+            <input type="checkbox" name="toppings" value="C:Canadian Bacon">
             Canadian Bacon
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Bacon">
+            <input type="checkbox" name="toppings" value="C:Bacon">
             Bacon
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Sausage">
+            <input type="checkbox" name="toppings" value="C:Sausage">
             Sausage
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Anchovies">
+            <input type="checkbox" name="toppings" value="C:Anchovies">
             Anchovies
           </label>
           <label class="checkbox">
-            <input type="checkbox" name="toppings" value="Chicken">
+            <input type="checkbox" name="toppings" value="C:Chicken">
             Chicken
           </label>
         </div>
@@ -117,7 +119,7 @@
       </div>
       
       <div id="div-output">
-        <p class="h3">Your pizza is going to be yumm-azing!</h3>
+        <p class="h2"><span id="output-name">Your</span> pizza is going to be yumm-azing!</h2>
         <p>Size: <span id="output-size"></span></p>
         <p>Toppings:</p>
         <ul>
