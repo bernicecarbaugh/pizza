@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   // when name is changed
   $("input#name").change(function() {
-    pizza.name = $("input#name").val().toUpperCase();
+    pizza.orderName = $("input#name").val().toUpperCase();
     calcPizzaPrice(pizza);
     displayOutput(pizza);
   });
@@ -39,6 +39,9 @@ $(document).ready(function(){
   // when Make My Pizza button is clicked
   $("form#form-order").submit(function(event){
     event.preventDefault();
+    if (blnValidOrder(pizza)) {
+      alert ("You've got great taste! We're on it and your pizza will be ready in just a few minutes!");
+    };
   });
   
   
@@ -46,8 +49,8 @@ $(document).ready(function(){
 
 // updates output 
 var displayOutput = function(pizza){
-  if (pizza.name) {
-    $("span#output-name").text(pizza.name + "'s") ;
+  if (pizza.orderName) {
+    $("span#output-name").text(pizza.orderName + "'s") ;
   } else {
     $("span#output-name").text("Your");  
   };
@@ -67,7 +70,7 @@ var displayOutput = function(pizza){
 
 // ************************ biz logic ************************ 
 function Pizza(){
-  this.name = "";
+  this.orderName = "";
   this.size = "";
   this.toppings = [];
   this.price = 0.00;
@@ -76,7 +79,19 @@ function Pizza(){
 
 // when Make My Pizza button is clicked, verify all required inputs
 var blnValidOrder = function(pizza) {
-  return false;
+  if (pizza.orderName.length === 0) {
+    alert("Please specify a name for this amazing pizza.");
+    return false;
+  };
+
+  if (pizza.toppings.length === 0) {
+    var reply = confirm("You haven't select any toppings at all. Are you sure you want a plain crust?");
+    if ( reply === false) {
+      return false;
+    }
+  };
+
+  return true;
 };
 
 // calculate pizza price function
