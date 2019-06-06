@@ -8,6 +8,7 @@ $(document).ready(function(){
   $("input:checkbox[name=toppings]:checked").each(function(){
     pizza.toppings.push($(this).val());
   });
+  displayOutput(pizza);
 
   // when name is changed
   $("input#name").change(function() {
@@ -41,6 +42,9 @@ $(document).ready(function(){
     event.preventDefault();
     if (blnValidOrder(pizza)) {
       alert ("You've got great taste! We're on it and your pizza will be ready in just a few minutes!");
+      $("span#output-title").text("Making " + pizza.orderName + "'s yumm-azing pizza!");
+      $("div#div-output").css("background-color", "lightgoldenrodyellow");
+      $("#btn-make-pizza").attr("disabled", true);
     };
   });
   
@@ -49,11 +53,13 @@ $(document).ready(function(){
 
 // updates output 
 var displayOutput = function(pizza){
+  var strTitle = "";
   if (pizza.orderName) {
-    $("span#output-name").text(pizza.orderName + "'s") ;
+    strTitle = pizza.orderName + "'s custom pizza...";
   } else {
-    $("span#output-name").text("Your");  
-  };
+    strTitle = "Your custom pizza...";
+  }
+  $("span#output-title").text(strTitle);
 
   // topping value has the Category Letter : Topping name (like B:Onions) so need to slice
   var toppingHTML = "";
@@ -64,7 +70,6 @@ var displayOutput = function(pizza){
   
   $("span#output-size").text(pizza.size);
   $("span#output-price").text(pizza.price.toFixed(2));
-  $("div#div-output").show();
 };
 
 
@@ -137,7 +142,7 @@ var calcPizzaPrice = function(pizza) {
       num += countCToppings * 0.50;
       break;
     case "Large":
-    case "Extra-Large":
+    case "Extra Large":
       num += countBToppings * 0.50;
       num += countCToppings * 1.00;
       break;

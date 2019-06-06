@@ -1,3 +1,37 @@
+.jumbotron{
+  background-color: darkred;
+  color: #fff;
+}
+
+blockquote{
+  background-color: gray;
+}
+
+#div-container{
+  border-color: red;
+}
+
+#div-order{
+  border-color: darkred;
+  border-style: dotted;
+  padding: 10px;
+  background-color: whitesmoke;
+}
+
 #div-output{
-  display: none;
+  border-color: darkred;
+  border-style: solid;
+  padding: 10px;
+  background-color: lightpink;
+}
+
+#img-pizza{
+  text-align: right;
+  float: right;
+}
+
+hr {
+  color: darkred;
+  background-color: darkred;
+  height: 1px;
 }
